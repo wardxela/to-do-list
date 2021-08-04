@@ -1,0 +1,25 @@
+.checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #00ff00;
+  &__input {
+    appearance: none;
+    &:checked {
+      ~ .checkbox__circle {
+        background-color: #00ff00;
+      }
+    }
+  }
+  &__circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    border-radius: inherit;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+  }
+}

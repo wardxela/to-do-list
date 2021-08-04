@@ -1,0 +1,38 @@
+.to-do-item {
+  display: flex;
+  align-items: center;
+  &__complete {
+    margin-right: 20px;
+  }
+
+  &__text {
+    flex-grow: 1;
+  }
+
+  &__remove {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 60%;
+      left: 50%;
+      top: 20%;
+      background-color: #ff0000;
+    }
+    &::before {
+      transform: translateX(-50%) rotate(-45deg);
+    }
+    &::after {
+      transform: translateX(-50%) rotate(45deg);
+    }
+    &:hover {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+  }
+}

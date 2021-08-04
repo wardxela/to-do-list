@@ -1,0 +1,11 @@
+.to-do-add {
+  display: flex;
+
+  &__input {
+    flex: 1 1 100%;
+  }
+
+  &__btn {
+    flex: 1 1 auto;
+  }
+}
