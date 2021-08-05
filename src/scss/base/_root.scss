@@ -1,5 +1,5 @@
 :root {
-  --primary-font: serif;
+  --primary-font: "Open Sans", sans-serif;
 
   --primary-color: #00f;
 
@@ -7,14 +7,14 @@
   --light-background-color: #ffffff;
 
   --text-color: #000;
-  --second-text-color: #000;
+  --second-text-color: #aaa;
   --light-text-color: #fff;
 
   --hover-color: #444;
 
-  --success-color: #0f0;
+  --success-color: #06d6a0;
   --disabled-element-color: #eee;
-  --alert-color: #f00;
+  --alert-color: #ef476f;
   --muted-color: #ccc;
 }
 
@@ -22,7 +22,7 @@ html {
   background-color: var(--light-background-color);
   font-family: var(--primary-font);
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 18px;
   height: 100%;
 }
 
@@ -34,5 +34,5 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100%;
+  height: 100vh;
 }

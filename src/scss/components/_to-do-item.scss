@@ -1,12 +1,24 @@
 .to-do-item {
   display: flex;
   align-items: center;
-  &__complete {
-    margin-right: 20px;
+  &:not(:last-child) {
+    margin-bottom: 15px;
   }
-
-  &__text {
+  &__complete,
+  &__remove {
+    flex: 0 0 48px;
+  }
+  &__textbox {
     flex-grow: 1;
+    padding: 0 5px;
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 150%;
+    &._completed {
+      text-decoration: line-through;
+      color: var(--second-text-color);
+    }
   }
 
   &__remove {
@@ -20,10 +32,10 @@
       content: "";
       position: absolute;
       width: 3px;
-      height: 60%;
+      height: 50%;
       left: 50%;
-      top: 20%;
-      background-color: #ff0000;
+      top: 25%;
+      background-color: var(--alert-color);
     }
     &::before {
       transform: translateX(-50%) rotate(-45deg);
@@ -32,7 +44,7 @@
       transform: translateX(-50%) rotate(45deg);
     }
     &:hover {
-      background-color: rgba(255, 0, 0, 0.2);
+      background-color: rgba(#ef476f, 0.2);
     }
   }
 }
