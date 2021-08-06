@@ -222,6 +222,7 @@ function watchChanges() {
     },
     port: 3000,
     notify: false,
+    ghostMode: false,
   });
   watch(["src/*.html", "src/components/**/*.html"], html);
   watch("src/scss/**/*.scss", css);

@@ -2,7 +2,6 @@
   flex: 0 0 calc(100% - 78px);
   width: 100%;
   overflow: auto;
-  margin: 15px auto;
   &::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -21,4 +20,5 @@
 
 .to-do-list {
   padding: 0 7.5px;
+  margin: 15px 0;
 }

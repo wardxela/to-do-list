@@ -1,1 +1,107 @@
+.btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: 0.1s ease;
+  &_remove {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 50%;
+      left: 50%;
+      top: 25%;
+      background-color: var(--alert-color);
+    }
+    &::before {
+      transform: translateX(-50%) rotate(-45deg);
+    }
+    &::after {
+      transform: translateX(-50%) rotate(45deg);
+    }
+    &:hover {
+      background-color: rgba(#ef476f, 0.2);
+    }
+  }
+  &_details {
+    &:hover {
+      background-color: rgba(#06d6a0, 0.2);
+    }
+    &::before,
+    &::after {
+      content: "";
+      transform: translateX(-50%);
+    }
+    span,
+    &::before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: inherit;
+      background-color: var(--success-color);
+    }
 
+    span {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      top: 25%;
+    }
+
+    &::after {
+      bottom: 25%;
+    }
+  }
+
+  &_edit {
+    &:disabled {
+      background-color: rgba(#118ab2, 0.2);
+      opacity: 0.4;
+    }
+    &:hover {
+      background-color: rgba(#118ab2, 0.2);
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--info-color);
+    }
+    &::before {
+      width: 3px;
+      height: 3px;
+      border-radius: inherit;
+      left: 14px;
+      bottom: 14px;
+    }
+
+    &::after {
+      left: 55%;
+      top: 45%;
+      width: 3px;
+      height: 20px;
+      border-radius: 3px;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+.text-btn {
+  color: #fff;
+  padding: 15px 20px;
+  &:disabled {
+    opacity: 0.4;
+  }
+  &_success {
+    background-color: var(--success-color);
+    background-color: #06d6a0;
+  }
+  &_danger {
+    background-color: var(--alert-color);
+  }
+}
