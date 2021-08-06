@@ -4,7 +4,18 @@
   height: 48px;
   border-radius: 50%;
   transition: 0.1s ease;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.15);
+  }
+
   &_remove {
+    color: var(--alert-color);
+
+    &:hover {
+      color: var(--alert-hover-color);
+    }
+
     &::before,
     &::after {
       content: "";
@@ -13,21 +24,22 @@
       height: 50%;
       left: 50%;
       top: 25%;
-      background-color: var(--alert-color);
+      background-color: currentColor;
     }
+
     &::before {
       transform: translateX(-50%) rotate(-45deg);
     }
+
     &::after {
       transform: translateX(-50%) rotate(45deg);
     }
-    &:hover {
-      background-color: rgba(#ef476f, 0.2);
-    }
   }
+
   &_details {
+    color: var(--success-color);
     &:hover {
-      background-color: rgba(#06d6a0, 0.2);
+      color: var(--success-hover-color);
     }
     &::before,
     &::after {
@@ -42,7 +54,7 @@
       width: 5px;
       height: 5px;
       border-radius: inherit;
-      background-color: var(--success-color);
+      background-color: currentColor;
     }
 
     span {
@@ -59,18 +71,19 @@
   }
 
   &_edit {
+    color: var(--info-color);
     &:disabled {
       background-color: rgba(#118ab2, 0.2);
       opacity: 0.4;
     }
-    &:hover {
-      background-color: rgba(#118ab2, 0.2);
+    &:hover:not(:disabled) {
+      color: var(--info-hover-color);
     }
     &::before,
     &::after {
       content: "";
       position: absolute;
-      background-color: var(--info-color);
+      background-color: currentColor;
     }
     &::before {
       width: 3px;
@@ -94,14 +107,21 @@
 .text-btn {
   color: #fff;
   padding: 15px 20px;
+  transition: 0.1s ease;
   &:disabled {
     opacity: 0.4;
   }
   &_success {
     background-color: var(--success-color);
     background-color: #06d6a0;
+    &:hover:not(:disabled) {
+      background-color: var(--success-hover-color);
+    }
   }
   &_danger {
     background-color: var(--alert-color);
+    &:hover:not(:disabled) {
+      background-color: var(--alert-hover-color);
+    }
   }
 }

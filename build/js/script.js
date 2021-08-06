@@ -133,7 +133,7 @@ function renderEditor(taskId, textEl, handleElements) {
     handleElements(true);
   });
 
-  return [editorArea, editor, controllers];
+  return [editorArea, editor];
 }
 
 function renderTask(data) {
@@ -210,19 +210,19 @@ function renderTask(data) {
     openEl(null);
     handleElements(false);
 
-    const [editorArea, editor, controllers] = renderEditor(
-      data.id,
-      text,
-      handleElements
-    );
+    const [editorArea, editor] = renderEditor(data.id, text, handleElements);
 
     textbox.append(editorArea);
     editor.focus();
+    // setTimeout(() => editor.classList.add("_animate"));
+    editor.classList.add("_animate");
   });
 
   removeBtn.addEventListener("click", e => {
-    li.remove();
+    removeBtn.disabled = true;
     reduceTasksStorage(data.id);
+    li.classList.add("_removing");
+    setTimeout(() => li.remove(), 500);
   });
 
   checkboxInput.addEventListener("input", e => {

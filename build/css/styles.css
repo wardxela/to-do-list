@@ -187,6 +187,9 @@ button:-moz-focusring,
   --success-color: #06d6a0;
   --info-color: #118ab2;
   --alert-color: #ef476f;
+  --success-hover-color: #05a47b;
+  --info-hover-color: #0d6683;
+  --alert-hover-color: #eb184a;
   --disabled-element-color: #eee;
   --muted-color: #ccc;
 }
@@ -248,6 +251,20 @@ body {
   transition: 0.1s ease;
 }
 
+.btn:hover:not(:disabled) {
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.btn_remove {
+  color: var(--alert-color);
+}
+
+.btn_remove:hover {
+  color: var(--alert-hover-color);
+}
+
 .btn_remove::before,
 .btn_remove::after {
   content: "";
@@ -256,7 +273,7 @@ body {
   height: 50%;
   left: 50%;
   top: 25%;
-  background-color: var(--alert-color);
+  background-color: currentColor;
 }
 
 .btn_remove::before {
@@ -271,12 +288,12 @@ body {
           transform: translateX(-50%) rotate(45deg);
 }
 
-.btn_remove:hover {
-  background-color: rgba(239, 71, 111, 0.2);
+.btn_details {
+  color: var(--success-color);
 }
 
 .btn_details:hover {
-  background-color: rgba(6, 214, 160, 0.2);
+  color: var(--success-hover-color);
 }
 
 .btn_details::before,
@@ -295,7 +312,7 @@ body {
   width: 5px;
   height: 5px;
   border-radius: inherit;
-  background-color: var(--success-color);
+  background-color: currentColor;
 }
 
 .btn_details span {
@@ -313,20 +330,24 @@ body {
   bottom: 25%;
 }
 
+.btn_edit {
+  color: var(--info-color);
+}
+
 .btn_edit:disabled {
   background-color: rgba(17, 138, 178, 0.2);
   opacity: 0.4;
 }
 
-.btn_edit:hover {
-  background-color: rgba(17, 138, 178, 0.2);
+.btn_edit:hover:not(:disabled) {
+  color: var(--info-hover-color);
 }
 
 .btn_edit::before,
 .btn_edit::after {
   content: "";
   position: absolute;
-  background-color: var(--info-color);
+  background-color: currentColor;
 }
 
 .btn_edit::before {
@@ -351,6 +372,9 @@ body {
 .text-btn {
   color: #fff;
   padding: 15px 20px;
+  -webkit-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+  transition: 0.1s ease;
 }
 
 .text-btn:disabled {
@@ -362,8 +386,16 @@ body {
   background-color: #06d6a0;
 }
 
+.text-btn_success:hover:not(:disabled) {
+  background-color: var(--success-hover-color);
+}
+
 .text-btn_danger {
   background-color: var(--alert-color);
+}
+
+.text-btn_danger:hover:not(:disabled) {
+  background-color: var(--alert-hover-color);
 }
 
 .to-do-add {
@@ -392,6 +424,19 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.to-do-item._removing {
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .to-do-item:not(:last-child) {
@@ -438,10 +483,16 @@ body {
   min-width: 0;
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: 0 0 2px 1px var(--success-color);
-          box-shadow: 0 0 2px 1px var(--success-color);
   border-radius: 5px;
   padding: 0 15px;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.to-do-item-editor-area__input._animate {
+  -webkit-box-shadow: 0 0 1px 2px var(--success-color);
+          box-shadow: 0 0 1px 2px var(--success-color);
 }
 
 .to-do-item-editor-area__controllers {
@@ -529,8 +580,8 @@ body {
 
 .to-do {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% - 78px);
-          flex: 0 0 calc(100% - 78px);
+      -ms-flex: 0 0 calc(100% - 48px);
+          flex: 0 0 calc(100% - 48px);
   width: 100%;
   overflow: auto;
 }
@@ -591,8 +642,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     background-color: #fff;
-    -webkit-box-shadow: 0px 0px 2px 1px var(--success-color);
-            box-shadow: 0px 0px 2px 1px var(--success-color);
+    -webkit-box-shadow: 0px 0px 1px 2px var(--success-color);
+            box-shadow: 0px 0px 1px 2px var(--success-color);
     -webkit-transition: top 0.2s ease-in, opacity 0.1s ease-in;
     -o-transition: top 0.2s ease-in, opacity 0.1s ease-in;
     transition: top 0.2s ease-in, opacity 0.1s ease-in;
