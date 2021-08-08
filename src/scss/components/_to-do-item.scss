@@ -57,7 +57,10 @@
     padding: 0 15px;
     transition: 0.2s ease;
     &._animate {
-      box-shadow: 0 0 1px 2px var(--success-color);
+      box-shadow: 0 0 1px 1px var(--success-color);
+      &:focus {
+        box-shadow: 0 0 2px 2px var(--success-color);
+      }
     }
   }
   &__controllers {

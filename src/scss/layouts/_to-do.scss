@@ -1,24 +1,6 @@
 .to-do {
-  flex: 0 0 calc(100% - 48px);
-  width: 100%;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--success-color);
-    border-radius: 4px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: darken(#06d6a0, 5%);
-  }
-  &::-webkit-scrollbar-track {
-    background: #f0f0f0;
-  }
+  padding: 150px 7.5px;
 }
 
 .to-do-list {
-  padding: 0 7.5px;
-  margin: 15px 0;
 }

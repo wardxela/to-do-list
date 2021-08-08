@@ -15,21 +15,31 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="page">
-      <header class="header">
-  <div class="container"></div>
+    <header class="header">
+  <div class="container">
+    <div class="to-do-search">
+      <input
+        type="text"
+        placeholder="Search"
+        id="to-do-search-input"
+        class="input-text to-do-search__input"
+      />
+    </div>
+  </div>
 </header>
- <main class="to-do container">
-  <ul class="to-do-list" id="to-do-list"></ul>
+ <main class="to-do">
+  <div class="container">
+    <ul class="to-do-list" id="to-do-list"></ul>
+  </div>
 </main>
 
-      <footer class="footer">
+    <footer class="footer">
   <div class="container">
     <form id="to-do-add">
       <div class="to-do-add">
         <input
           type="text"
-          class="to-do-add__input"
+          class="input-text to-do-add__input"
           id="to-do-add-input"
           placeholder="Add task"
         />
@@ -41,6 +51,5 @@
   </div>
 </footer>
 
-    </div>
   </body>
 </html>

@@ -1,4 +1,21 @@
 @use '../abstracts' as *;
 .footer {
-  flex: 0 0 48px;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.to-do-add {
+  display: flex;
+  &__input {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  &__btn {
+    flex: 0 0 auto;
+  }
 }

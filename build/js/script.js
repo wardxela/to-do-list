@@ -2,6 +2,7 @@
 const addItemForm = document.querySelector("#to-do-add");
 const addItemFormField = document.querySelector("#to-do-add-input");
 const toDoList = document.querySelector("#to-do-list");
+const searchInput = document.querySelector("#to-do-search-input");
 
 let previouslyOpenedMenu = null;
 
@@ -190,6 +191,7 @@ function renderTask(data) {
   editBtn.type = "button";
 
   li.dataset.taskId = data.id;
+  li.dataset.taskSearchQuery = data.text;
   text.textContent = data.text;
   checkboxInput.checked = data.completed;
 
@@ -248,4 +250,16 @@ addItemForm.addEventListener("submit", e => {
     expandTasksStorage(task);
     addItemFormField.value = "";
   }
+});
+
+searchInput.addEventListener("input", e => {
+  const query = searchInput.value.toLowerCase();
+  document.querySelectorAll("[data-task-id]").forEach(el => {
+    const task = el.dataset.taskSearchQuery.toLowerCase();
+    if (task.includes(query)) {
+      el.classList.remove("_hidden");
+    } else {
+      el.classList.add("_hidden");
+    }
+  });
 });
